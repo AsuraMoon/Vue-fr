@@ -8,17 +8,38 @@
 		<title>Cafe with a Vue</title>
 	</head>
 	<body>
-		<div class="app">
-			<h1>La belle vue</h1>
+		<div id="app">
+			<h1>{{message}}</h1>
 			<p class="description">
 				Bienvenue dans notre café la belle vue ! Nous sommes réputés pour notre
 				pain et nos merveilleuses pâtisseries. Faites vous plaisir dès le matin
 				ou avec un goûter réconfortant. Mais attention, vous verrez qu'il est
-				difficile de s'arrêter.
+				difficile de s'arrêter.Le restaurant {{restaurantName}} est ouvert tout les jours.  
+				<ul>
+					<li>Pommes: {{ prices.costofbanana }}€</li>
+					<li>Bananes: {{ prices.costoforange }}€</li>
+					<li>Noix de coco: {{ prices.costoftomate }}€</li>
+				</ul>
+				Total: {{ prices.costofbanana + prices.costoforange + prices.costoftomate }}€
 			</p>
 			<footer class="footer">
 				<p>Copyright La belle vue 2020</p>
 			</footer>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+		<script>
+			const app = new Vue({
+				el: '#app',
+				data: {
+					message: 'La belle vue tomate',
+					restaurantName: 'AmazingRest',
+					prices:{
+						costofbanana: 6,
+						costoforange: 15,
+						costoftomate: 9
+					}
+				},
+			});
+		</script>
 	</body>
 </html>
