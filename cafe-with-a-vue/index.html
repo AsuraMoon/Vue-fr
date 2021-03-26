@@ -20,7 +20,7 @@
 					<li>Bananes: {{ prices.costoforange }}€</li>
 					<li>Noix de coco: {{ prices.costoftomate }}€</li>
 				</ul>
-				Total: {{ prices.costofbanana + prices.costoforange + prices.costoftomate }}€
+				Total: {{ totalAmount }}€
 			</p>
 			<footer class="footer">
 				<p>Copyright La belle vue 2020</p>
@@ -34,11 +34,16 @@
 					message: 'La belle vue tomate',
 					restaurantName: 'AmazingRest',
 					prices:{
-						costofbanana: 6,
+						costofbanana: 4,
 						costoforange: 15,
 						costoftomate: 9
-					}
+					},
 				},
+				computed: {
+					totalAmount() {
+						return this.prices.costofbanana + this.prices.costoforange + this.prices.costoftomate
+					},
+				}
 			});
 		</script>
 	</body>
