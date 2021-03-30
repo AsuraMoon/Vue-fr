@@ -63,6 +63,11 @@
 			<footer class="footer">
 				<p>{{ copyright }}</p>
 			</footer>
+			<ul>
+				<li v-for="item in apiResponse">
+					<a v-bind:href="item.url">{{ item.name }}</a>
+				</li>
+			</ul>
 		</div>
 
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -75,6 +80,11 @@
 					phone: "01 88 88 88 88",
 					restaurantName: "La belle vue",
 					shoppingCart: 0,
+					apiResponse: [
+						{ name: 'GitHub', url: 'https://www.github.com' },
+						{ name: 'Twitter', url: 'https://www.twitter.com' },
+						{ name: 'Netlify', url: 'https://www.netlify.com' }
+					],
 					simpleMenu: [
 						{
 							name: "Croissant",
@@ -118,6 +128,7 @@
 					}
 				}
 			})
+			
 		</script>
 	</body>
 </html>
